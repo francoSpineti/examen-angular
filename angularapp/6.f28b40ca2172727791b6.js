@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{gdKB:function(n,o,e){"use strict";e.r(o),e.d(o,"SalenPizzasModule",function(){return s});var t=e("ofXK"),r=e("MQAg"),i=e("fXoL");let s=(()=>{class n{}return n.\u0275fac=function(o){return new(o||n)},n.\u0275mod=i.Ib({type:n}),n.\u0275inj=i.Hb({imports:[[t.b,r.a]]}),n})()}}]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{xMBH:function(n,o,e){"use strict";e.r(o),e.d(o,"IngresoModule",function(){return u});var r=e("ofXK"),t=e("APY9"),s=e("fXoL");let u=(()=>{class n{}return n.\u0275fac=function(o){return new(o||n)},n.\u0275mod=s.Ib({type:n}),n.\u0275inj=s.Hb({imports:[[r.b,t.a]]}),n})()}}]);
