@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup" (ngSubmit)="iniciarSesion()" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
+
+    <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email">
+    <small class="invalid" *ngIf="formGroup.controls['email'].errors?.required && formGroup.controls['email'].touched">El email es requerido</small>
+    <small class="invalid" *ngIf="formGroup.controls['email'].errors?.email && formGroup.controls['email'].touched">El formato es invalido</small>
+
+    <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Password">
+    <small class="invalid" *ngIf="formGroup.controls['password'].errors?.required && formGroup.controls['password'].touched">La contraseña es requerida</small>
+
+    <div class="checkbox mb-3"></div>
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="iniciarSesion()" [disabled]="formGroup.invalid">Iniciar Sesion</button>
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" routerLink="registro">Registro</button>
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="ingresoEmpleado()">Empleado</button>
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="ingresoAdmin()">Admin</button>
+
+  </form>

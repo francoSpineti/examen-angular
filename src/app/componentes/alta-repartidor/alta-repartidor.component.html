@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="py-5 text-center">
+      <h2>Alta Repartidor</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <app-tabla-paises (eventoPaisSeleccionado)="cargarPaisSeleccionado($event)"></app-tabla-paises>
+      </div>
+
+      <div class="col-md-8 order-md-1">
+        <form class="needs-validation" [formGroup]="formGroup" (ngSubmit)="altaRepartidor()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nombre</label>
+              <input type="text" class="form-control" id="firstName" formControlName="nombre">
+              <small class="invalid" *ngIf="formGroup.controls['nombre'].errors?.required && formGroup.controls['nombre'].touched">El nombre es requerido</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Dni</label>
+              <input type="number" class="form-control" id="lastName" formControlName="dni">
+              <small class="invalid" *ngIf="formGroup.controls['dni'].errors?.required && formGroup.controls['dni'].touched">El dni es requerido</small>
+              <small class="invalid" *ngIf="formGroup.controls['dni'].errors?.min || formGroup.controls['dni'].errors?.max && formGroup.controls['dni'].touched">Dni incorrecto</small>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email">Edad</label>
+            <input type="number" class="form-control" id="email" formControlName="edad">
+            <small class="invalid" *ngIf="formGroup.controls['edad'].errors?.required && formGroup.controls['edad'].touched">La edad es requerida</small>
+            <small class="invalid" *ngIf="formGroup.controls['edad'].errors?.min || formGroup.controls['edad'].errors?.max && formGroup.controls['edad'].touched">La edad debe estar entre 18 o 99 años.</small>
+          </div>
+          <div class="mb-3">
+            <label for="address">Unidad Propia</label>
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+              <input id="radioSi" type="radio" class="custom-control-input" formControlName="unidadPropia" value="Si" >
+              <label class="custom-control-label" for="radioSi">Si</label>
+              </div>
+              <div class="custom-control custom-radio">
+              <input id="radioNo" type="radio" class="custom-control-input" formControlName="unidadPropia" value="No">
+              <label class="custom-control-label" for="radioNo">No</label>
+              </div>
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="address2">Capacidad</label>
+            <input type="number" class="form-control" id="address2" formControlName="capacidadTransporte">
+            <small class="invalid" *ngIf="formGroup.controls['capacidadTransporte'].errors?.required && formGroup.controls['capacidadTransporte'].touched">Capacidad requerida</small>
+            <small class="invalid" *ngIf="formGroup.controls['capacidadTransporte'].errors?.min || formGroup.controls['capacidadTransporte'].errors?.max && formGroup.controls['capacidadTransporte'].touched">Capacidad incorrecta, minimo 1 max 20</small>
+          </div>
+            <div class="mb-3">
+              <label for="country">Pais de Origen</label>
+              <input type="text" disabled class="form-control" id="address2" formControlName="paisDeOrigen">
+            </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="formGroup.invalid">Crear Repartidor</button>
+        </form>
+      </div>
+    </div>

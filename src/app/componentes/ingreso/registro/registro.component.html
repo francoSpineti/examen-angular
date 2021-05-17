@@ -1,0 +1,23 @@
+<form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    Perfil<br>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="adminRadio" value="admin" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Admin
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="empleadoRadio" value="empleado">
+        <label class="form-check-label" for="exampleRadios2">
+          Empleado
+        </label>
+      </div><br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>
+    <button class="btn btn-lg btn-primary btn-block" type="button" routerLink="/login">Volver</button>
+</form>

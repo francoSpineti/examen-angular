@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<div class="container py-3">
+    <main>
+      <app-listar-pizzas (eventoPizzaSeleccionada)="cargarEventoRepartidorRecibido($event)"></app-listar-pizzas>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <app-alta-pizza></app-alta-pizza>
+        <div class="col">
+          <app-modif-pizza [pizzaSeleccionada]="pizzaSeleccionada"></app-modif-pizza>
+        </div>
+        <div class="col">
+          <app-borrar-pizza [pizzaSeleccionada]="pizzaSeleccionada"></app-borrar-pizza>
+        </div>
+      </div>
+    </main>
+  </div>
